@@ -10,7 +10,7 @@ module.exports.run = async(bot, message, arguments) => {
 
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry, You can't do this");
 
-    if (kickUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorr,y You can't kick him");
+    if (kickUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorr,You can't kick him");
 
     if (!reason) return message.channel.send("Give a reason.")
 
@@ -22,7 +22,7 @@ module.exports.run = async(bot, message, arguments) => {
         .addField("Reason:", reason)
         .setAuthor("TF Admin")
     
-    var kickChannel = message.guild.channels.find(`name`, "tfbotcommands");
+    var kickChannel = message.guild.channels.find(`name`, "mod-log");
     if (!kickChannel) return message.guild.send("Code 606 @ SavageMM");
 
     message.guild.member(kickUser).kick(reason);

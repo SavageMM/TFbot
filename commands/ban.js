@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, arguments) => {
         .addField("Reason:", reason)
         .setAuthor("TF Admin")
 
-    var banChannel = message.guild.channels.find(`name`, "tfbotcommands");
+    var banChannel = message.guild.channels.find(`name`, "mod-log");
     if (!banChannel) return message.guild.send("Code 404 channel not found @ SavageMM");
 
     message.guild.member(banUser).ban(reason);
