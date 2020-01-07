@@ -101,7 +101,7 @@ bot.on("createRole", async createRole => {
 
     var roleCreated = new discord.RichEmbed()
     .setTitle("Role Created")
-    .addField(createRol)
+    .addField(newRole)
 
     var logChannel = messageDelete.guild.channels.find(`name`, "delete-log");
 
